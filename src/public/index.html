@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulario de Inscripción de Estudiantes</title>
+    <link rel="stylesheet" href="pug.css">
+    <link rel="stylesheet" href="menu.css">
+</head>
+<body>
+    <ul class="menu">
+        <li><a href="#">Profesor</a></li>
+        <li><a href="estudents.html">Alumnos</a></li>
+        <li><a href="datosAlumnos.html">Datos</a></li>
+        <li><a href="https://form.jotform.com/243131031663848">Formulario</a></li>
+        <li><a href="#">God</a></li>
+    </ul>
+    <h1>Insertar nuevo profesor</h1>
+    <form method="POST" action="/insertTeacher">
+        <label for="controlnumber">Número de Control:</label>
+        <input type="text" id="controlnumber" name="controlnumber" required><br><br>
+      
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" name="name" required><br><br>
+      
+        <label for="lastname">Apellido:</label>
+        <input type="text" id="lastname" name="lastname" required><br><br>
+      
+        <label for="carrera">Carrera:</label>
+        <input type="text" id="carrera" name="carrera" required><br><br>
+      
+        <label for="horas">Horas:</label>
+        <input type="number" id="horas" name="horas" required><br><br>
+      
+        <label for="fechaIngreso">Fecha de Ingreso:</label>
+        <input type="date" id="fechaIngreso" name="fechaIngreso" required><br><br>
+      
+        <label for="status">Estado:</label>
+        <input type="text" id="status" name="status" required><br><br>
+      
+        <button type="submit">Enviar</button>
+        <input type="button" value="Enviar">
+      </form>
+</body>
+</html>

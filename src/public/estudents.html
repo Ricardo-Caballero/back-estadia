@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulario de Inscripción de Estudiantes</title>
+    <link rel="stylesheet" href="pug.css">
+    <link rel="stylesheet" href="menu.css">
+</head>
+<body>
+    <ul class="menu">
+        <li><a href="index.html">profesor</a></li>
+        <li><a href="#">Alumno</a></li>
+        <li><a href="datosAlumnos.html">Datos</a></li>
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+    </ul>
+    <h1>Ingresar nuevo estudiante</h1>
+    <form method="POST" action="/api/students">
+        <label for="controlnumber">Número de Control:</label>
+        <input type="text" id="controlnumber" name="controlnumber" required><br><br>
+      
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" name="name" required><br><br>
+      
+        <label for="lastname">Apellido:</label>
+        <input type="text" id="lastname" name="lastname" required><br><br>
+      
+        <label for="carrera">Carrera:</label>
+        <input type="text" id="carrera" name="carrera" required><br><br>
+      
+        <label for="grupo">Grupo:</label>
+        <input type="text" id="grupo" name="grupo" required><br><br>
+      
+        <label for="grade">Grado:</label>
+        <input type="number" id="grade" name="grade" required><br><br>
+      
+        <label for="status">Estado:</label>
+        <input type="text" id="status" name="status" required><br><br>
+
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>

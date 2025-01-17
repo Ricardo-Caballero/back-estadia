@@ -1,0 +1,71 @@
+
+---> ESTUDIANTE
+
+localhost:3000/api/students/getOne/160931
+localhost:3000/api/students/insert
+
+	{
+  "controlnumber":"1111",
+  "name":"Ricardo",
+  "lastname":"Castillo",
+  "carrera":"IEVND",
+  "grade":9,
+  "average":10,
+  "status":"Activo"
+}
+	
+localhost:3000/api/students/updateOne/1111
+
+{
+  "name":"Pedro",
+  "lastname":"Duran",
+  "grade":7,
+  "average":7
+}
+
+
+localhost:3000/api/students/delete/1111
+
+
+------------------------------------------------------------------
+
+------PROFESOR
+
+
+* localhost:3000/api/profesores/getAllProfesors
+
+
+localhost:3000/api/profesores/getOne/220256
+localhost:3000/api/profesores/getOne/199211111
+localhost:3000/api/profesores/getOne/1970
+localhost:3000/api/profesores/getOne/1889
+
+
+localhost:3000/api/profesores/insert 				-->INSERT ONE
+
+{
+  "controlnumber":"1111",
+  "name":"Ariel",
+  "lastname":"Rojas",
+  "carrera":"Primaria",
+  "horas":7,
+  "fechaIngreso":"14-10-2024",
+  "status":"Activo"
+}
+
+
+localhost:3000/api/profesores/updateProfesor/1111 		---> UPDATE PROFESOR
+{
+  "name":"Alexia",
+  "carrera":"Doctora"
+}
+
+localhost:3000/api/profesores/delete/1984		----->  DELETE ONE  PROFESOR
+
+
+
+lkjlkjlkjh
+
+
+
+localhost:3000/api/empleados/insert
