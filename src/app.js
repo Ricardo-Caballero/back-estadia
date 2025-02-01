@@ -129,27 +129,27 @@ app.post("/insertEmpresa", (req, res) => {
 });
 
 // Actualizar una empresa
-app.put('/updateEmpresa/:controlNumber', async (req, res) =>{
+app.put('/updateEmpresa/:controlNumber', async (req, res) => {
     try {
-        const {nombre, logo, descripcion, requisitos, vacantes} = req.body;
+        const { nombre, logo, descripcion, requisitos, vacantes } = req.body;
 
         const empresa = await Empresa.findOneAndUpdate(
-            { controlNumber: req.params.controlNumber }, 
-            {$set: { nombre, logo, descripcion, requisitos, vacantes }}, 
+            { controlNumber: req.params.controlNumber },
+            { $set: { nombre, logo, descripcion, requisitos, vacantes } },
             { new: true }//para obtener el documento actualizado
         );
 
-        if (empresa){
+        if (empresa) {
             res.json({
                 message: 'Empresa actualizada correctamente',
                 empresa: empresa
             });
-        }else{
+        } else {
             res.status(404).json({
                 message: 'Empresa no encontrada'
             });
         }
-    } catch (error){
+    } catch (error) {
         console.error(error);
         res.status(500).json({
             message: 'Error al actualizar la empresa'
@@ -159,20 +159,20 @@ app.put('/updateEmpresa/:controlNumber', async (req, res) =>{
 
 // Eliminar una empresa
 
-app.delete('/deleteOne/:controlNumber', async (req, res) =>{
+app.delete('/deleteOne/:controlNumber', async (req, res) => {
     try {
-        const empresa = await Empresa.findOneAndDelete({controlNumber: req.params.controlNumber});
-        if (empresa){
+        const empresa = await Empresa.findOneAndDelete({ controlNumber: req.params.controlNumber });
+        if (empresa) {
             res.json({
                 message: 'Empresa eliminada correctamente',
                 empresa: empresa
             });
-        }else{
+        } else {
             res.status(404).json({
                 message: 'Empresa no encontrada'
             });
-        } 
-    } catch(error){
+        }
+    } catch (error) {
         console.error(error);
         res.status(500).json({
             message: 'Error eliminada correctamente'
@@ -182,11 +182,22 @@ app.delete('/deleteOne/:controlNumber', async (req, res) =>{
 
 //Obtener todos las empresas
 
-app.get('/getAllEmpresas', async (req, res) =>{
+app.get('/getAllEmpresas', async (req, res) => {
     try {
         const empresas = await Empresa.find({});
-        res.json(empresas);
-    } catch (error){
+        let datos = [];
+
+        if (empresas != null && empresas && empresas.length > 0) {
+            datos = empresas.map(dato => ({
+                id: dato._id,
+                nombre: dato.nombre,
+                descripcion: dato.descripcion
+            }));
+
+        }
+        res.json(datos);
+        console.log(datos);
+    } catch (error) {
         console.error(error);
         res.status(500).json({
             message: 'Error al obtener las empresas'
