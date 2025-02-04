@@ -185,22 +185,22 @@ app.delete('/deleteOne/:controlNumber', async (req, res) => {
 app.get('/getAllEmpresas', async (req, res) => {
     try {
         const empresas = await Empresa.find({});
-        let datos = [];
+        let data = [];
 
         if (empresas != null && empresas && empresas.length > 0) {
-            datos = empresas.map(dato => ({
+            data = empresas.map(dato => ({
                 id: dato._id,
                 nombre: dato.nombre,
                 descripcion: dato.descripcion
             }));
 
         }
-        res.json(datos);
-        console.log(datos);
+        res.json(data);
+        console.log(data);
     } catch (error) {
         console.error(error);
         res.status(500).json({
-            message: 'Error al obtener las empresas'
+            message: 'seguro hay un error'
         });
     }
 });
