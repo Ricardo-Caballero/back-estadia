@@ -1,12 +1,12 @@
 import { Schema, model } from "mongoose";
 const vacantesSchema = new Schema({
-    controlnumber: {
-        type: String;
+    controlNumber: {
+        type: String,
         required: true,
         unique: true,
     }, name: String,
     puestos: Number,
-    descripcion: String
+    requisitos: String
 }, {
     versionKey: false,
     timestamps: true
